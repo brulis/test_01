@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Custom marker tooltips</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+<div id='map'></div>
+
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoiYnJ1bGlzIiwiYSI6InI1LXdYQjgifQ.xzabF7833BBZ6waAppxzoA';
+var map = L.mapbox.map('map', 'examples.h186knp8')
+    .setView([43.229, -0.453], 2);
+
+  var featureLayer = L.mapbox.featureLayer({
+        type: 'FeatureCollection',
+        features: [{
+            type: 'Feature',
+            properties: {
+                city: location.title,
+                image: location.image,
+            },
+            geometry: {
+                type: 'Point',
+                coordinates: [0, 0]
+            }
+        }]
+    })
+    .loadURL('https://raw.githubusercontent.com/brulis/test_01/master/test_03.geojson')
+    .addTo(map);
+
+
+featureLayer.eachLayer(function(layer) {
+
+    // here you call `bindPopup` with a string of HTML you create - the feature
+    // properties declared above are available under `layer.feature.properties`
+
+    var content = '<h1>size: ' + location.title + '<\/h1>' +
+         '<img src="' + location.image + '">';
+    layer.bindPopup(content);
+});
+
+
+// Add custom popups to each using our custom feature properties
+myLayer.on('layeradd', function(e) {
+    var marker = e.layer,
+        feature = marker.feature;
+
+    // Create custom popup content
+    var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.url + '">' +
+                            '<img src="' + feature.properties.image + '" height="42" width="42"/>' +
+                            feature.properties.city +
+                        '</a>';
+
+    // http://leafletjs.com/reference.html#popup
+    marker.bindPopup(popupContent,{
+        closeButton: false,
+        minWidth: 320
+    });
+});
+
+// Add features to the map
+myLayer.setGeoJSON(geoJson);
+</script>
+</body>
+</html>

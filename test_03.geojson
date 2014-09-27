@@ -1,0 +1,43 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+      "image": "https://raw.githubusercontent.com/brulis/test_01/master/images/pise_lampadaire.jpg",
+        "city": "Lampadaire"
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4063438773155212,
+          47.75410879939674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "image": "https://raw.githubusercontent.com/brulis/test_01/master/images/pise_lampadaire.jpg",
+        "city": "Lampadaire"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6149902343749998,
+          47.27177506640826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "image": "https://raw.githubusercontent.com/brulis/test_01/master/images/pise_lampadaire.jpg",
+        "city": "Lampadaire"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3515625,
+          48.21003212234042
+        ]
+      }
+    }
+  ]
+}
