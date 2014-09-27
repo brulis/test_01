@@ -50,7 +50,17 @@ var geoJson = [{
         "marker-color": "#ff8888",
         "city": "Lampadaire"
     }
-}];
+},  {
+    type: 'Feature',
+    "geometry": { "type": "Point", "coordinates":[1.4063438773155212,46.75410879939674]},
+    "properties": {
+        "image": "https://raw.githubusercontent.com/brulis/test_01/master/images/pise_lampadaire.jpg",
+        "url": "https://en.wikipedia.org/wiki/New_York_City",
+        "marker-color": "#ff8888",
+        "city": "Lampadaire"
+    }
+}
+];
 
 // Add custom popups to each using our custom feature properties
 myLayer.on('layeradd', function(e) {
