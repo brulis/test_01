@@ -17,7 +17,7 @@
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiYnJ1bGlzIiwiYSI6InI1LXdYQjgifQ.xzabF7833BBZ6waAppxzoA';
 var map = L.mapbox.map('map', 'examples.h186knp8')
-    .setView([43.229, -0.453], 1);
+    .setView([43.229, -0.453], 2);
 
 var myLayer = L.mapbox.featureLayer().addTo(map);
 
@@ -45,7 +45,7 @@ var geoJson = [{
     type: 'Feature',
     "geometry": { "type": "Point", "coordinates":[1.4063438773155212,47.75410879939674]},
     "properties": {
-        "image": "https://github.com/brulis/test_01/blob/master/images/1.jpg",
+        "image": "https://raw.githubusercontent.com/brulis/test_01/master/images/1.jpg",
         "url": "https://en.wikipedia.org/wiki/New_York_City",
         "marker-color": "#ff8888",
         "city": "Lampadaire"
