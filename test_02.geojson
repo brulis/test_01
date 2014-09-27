@@ -1,4 +1,7 @@
 {
+  "type": "FeatureCollection",
+  "features": [
+  {
     type: 'Feature',
     "geometry": { "type": "Point", "coordinates": [-77.03, 38.90]},
     "properties": {
@@ -36,4 +39,6 @@
         "marker-color": "#ff8888",
         "city": "Lampadaire"
     }
+}
+  ]
 }
