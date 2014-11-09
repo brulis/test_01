@@ -19,6 +19,12 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiYnJ1bGlzIiwiYSI6InI1LXdYQjgifQ.xzabF7833BBZ6w
 var map = L.mapbox.map('map', 'examples.h186knp8')
     .setView([43.229, -0.453], 2);
 
+
+var geojsonLayer = new L.GeoJSON.AJAX("./test_02.geojson");
+
+geojson.addTo(map);
+
+
   var featureLayer = L.mapbox.featureLayer({
         type: 'FeatureCollection',
         features: [{
